@@ -11,9 +11,9 @@ const port = 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const mongoUrl = '';
 
 // =============== Mongoose Setup ===============
+const mongoUrl = '';
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
