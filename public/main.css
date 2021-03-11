@@ -1,0 +1,85 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('./assets/images/background.jpg');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+#backdrop {
+    background-color: rgba(40, 42, 54, 0.75);
+    margin: 4px;
+    width: max-content;
+    backdrop-filter :blur(10px);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px 5px #bd93f9;
+}
+
+.button.is-primary {
+    background-color: #6272a4;
+    color: white;
+    transition: background-color 300ms;
+}
+
+.button.is-primary:hover {
+    background-color: #6192a3;
+}
+
+.input {
+    width: 70%;
+}
+
+.dpc-title {
+    color: #bd93f9;
+}
+
+.flag-success {
+    color: #50fa7b;
+}
+
+.flag-danger {
+    color: #ff5555;
+}
+
+p {
+    color: #f8f8f2;
+}
+
+a {
+    color: #ff79c6
+}
+
+a:hover {
+    color: #f1fa8c;
+}
+
+.input {
+    border-width: 0.2rem;
+}
+
+.input:focus {
+    border-color: #bd93f9;
+}
+
+.input::placeholder {
+    color: #7b7996;
+}
+
+@media (min-width: 950px) {
+    #backdrop {
+        width: 65%;
+    }
+}
+
+@media (max-width: 950px) {
+    .input {
+        width: 97%;
+    }
+}

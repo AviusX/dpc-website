@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>FrigidSec | DPC Result</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+
+<body>
+    <div id="backdrop">
+        <center>
+            <% if(success) { %> 
+                <h1 class="is-size-2 my-4 flag-success">Congratulations!</h1>
+                <p class="is-size-4 my-4">You have successfully solved the challenge <%= challengeName %> </p>
+            <% } else { %>
+                <h1 class="is-size-2 my-4 flag-danger">Invalid Flag</h1>
+                <p class="is-size-4 my-4">Keep trying! You'll get it. Persistence is key.</p>
+            <% } %> 
+        </center>
+    </div>
+</body>
+
+</html>
