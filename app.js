@@ -2,19 +2,18 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const crypto = require("crypto");
-const fs = require("fs");
 const path = require("path");
 
 const app = express();
-const port = 3000;
+const port = 6673;
+const config = require('./config');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
 // =============== Mongoose Setup ===============
-const mongoUrl = '';
-mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(config.mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
@@ -40,8 +39,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/flagcheck', (req, res) => {
-    const secret = fs.readFileSync(__dirname + '/secret.txt', 'utf8').trim();
-    const sha256Hasher = crypto.createHmac("sha256", secret);
+    const sha256Hasher = crypto.createHmac("sha256", config.secret);
     const flag = req.body.flag.trim();
     const flagHash = sha256Hasher.update(flag).digest("hex");
     Challenge.findOne({ flagHash: flagHash }, (err, result) => {

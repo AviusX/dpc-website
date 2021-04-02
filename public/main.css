@@ -6,7 +6,8 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('./assets/images/background.jpg');
+    background-color: #282a36;
+    background-image: linear-gradient(0deg, rgba(40, 42, 54, 0.7), rgba(40, 42, 54, 0.7)), url('./assets/images/background.webp');
     background-position: center;
     background-size: cover;
     overflow: hidden;
